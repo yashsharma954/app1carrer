@@ -60,14 +60,14 @@ export default function Categories({ onSelectCategory, activeCategory }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
         {categories.map(({ id, name, subtitle, count, image, accent, border }) => {
           const isSelected = activeCategory === id
           return (
             <div
               key={id}
               onClick={() => handleCategoryClick(id)}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 p-6 flex flex-col justify-between border bg-pitch text-linen shadow-md hover:shadow-2xl hover:-translate-y-1.5 min-h-[300px] ${
+              className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 p-4 sm:p-6 flex flex-col justify-between border bg-pitch text-linen shadow-md hover:shadow-2xl hover:-translate-y-1.5 min-h-[200px] sm:min-h-[300px] ${
                 isSelected
                   ? 'ring-2 ring-willow border-willow'
                   : 'border-white/10 ' + border
@@ -92,11 +92,11 @@ export default function Categories({ onSelectCategory, activeCategory }) {
               </div>
 
               {/* Card Bottom Meta */}
-              <div className="relative z-10 mt-auto pt-4 border-t border-white/15">
-                <h3 className="font-display text-xl font-bold text-linen group-hover:text-willow transition-colors drop-shadow-md">
+              <div className="relative z-10 mt-auto pt-3 sm:pt-4 border-t border-white/15">
+                <h3 className="font-display text-sm sm:text-xl font-bold text-linen group-hover:text-willow transition-colors drop-shadow-md leading-snug">
                   {name}
                 </h3>
-                <p className="text-xs text-linen/80 mt-1 drop-shadow-sm">{subtitle}</p>
+                <p className="text-[10px] sm:text-xs text-linen/80 mt-0.5 sm:mt-1 drop-shadow-sm line-clamp-1">{subtitle}</p>
               </div>
             </div>
           )

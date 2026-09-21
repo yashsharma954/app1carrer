@@ -37,8 +37,8 @@ export default function QuickViewModal({ product, onClose, onAdd }) {
         aria-hidden="true"
       />
 
-      <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-        <div className="relative transform overflow-hidden rounded-2xl bg-linen text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl border border-ink/10">
+      <div className="flex min-h-full items-center justify-center p-3 sm:p-4 text-center">
+        <div className="relative transform overflow-hidden rounded-2xl bg-linen text-left shadow-2xl transition-all my-4 sm:my-8 w-full max-w-lg sm:max-w-2xl max-h-[90vh] overflow-y-auto border border-ink/10">
           {/* Close button */}
           <button
             onClick={onClose}

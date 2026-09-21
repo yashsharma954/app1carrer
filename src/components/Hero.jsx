@@ -19,21 +19,21 @@ export default function Hero({ onShopClick }) {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-6">
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] sm:leading-[1.1] tracking-tight mb-5 sm:mb-6">
               Gear tested on a <span className="text-willow underline decoration-ball decoration-wavy decoration-2">real pitch</span>, not a warehouse shelf.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-linen/80 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+            <p className="text-linen/80 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl">
               Every English willow bat, leather match ball, and pro guard in our shop was picked out by active cricketers. We inspect every cleft for straight grains, sweet spot balance, and optimum rebound ping before it reaches your door.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-12">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
               <a
                 href="#products"
                 onClick={onShopClick}
-                className="bg-ball hover:bg-ball-dark text-linen px-8 py-4 rounded-full font-semibold text-sm transition-all duration-200 shadow-xl hover:shadow-ball/40 flex items-center gap-2 group hover:-translate-y-0.5"
+                className="bg-ball hover:bg-ball-dark text-linen px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 shadow-xl hover:shadow-ball/40 flex items-center gap-2 group hover:-translate-y-0.5"
               >
                 <span>Shop Match Collection</span>
                 <svg
@@ -89,21 +89,21 @@ export default function Hero({ onShopClick }) {
               <div className="absolute inset-0 bg-gradient-to-t from-pitch-deep/90 via-pitch-deep/20 to-transparent" />
 
               {/* Floating Match-Ready Pill */}
-              <div className="absolute top-5 left-5 z-20 bg-pitch-deep/85 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+              <div className="absolute top-3 left-3 sm:top-5 sm:left-5 z-20 bg-pitch-deep/90 backdrop-blur-md border border-white/20 px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 <div>
-                  <p className="text-[11px] font-bold text-linen leading-none">Match-Ready Ping</p>
-                  <p className="text-[10px] text-willow mt-0.5">Oiled & Machine Knocks Free</p>
+                  <p className="text-[10px] sm:text-[11px] font-bold text-linen leading-none">Match-Ready Ping</p>
+                  <p className="text-[9px] sm:text-[10px] text-willow mt-0.5">Oiled & Machine Knocks Free</p>
                 </div>
               </div>
 
               {/* Floating Shipping Counter Badge */}
-              <div className="absolute bottom-5 left-5 z-20 bg-linen/95 backdrop-blur text-ink px-5 py-3 rounded-2xl shadow-2xl border border-white/20">
-                <div className="flex items-center gap-2.5">
-                  <span className="text-xl">🏏</span>
+              <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 z-20 bg-linen/95 backdrop-blur text-ink px-3.5 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl shadow-2xl border border-white/20">
+                <div className="flex items-center gap-2">
+                  <span className="text-base sm:text-xl">🏏</span>
                   <div>
-                    <p className="font-display text-base font-extrabold leading-none text-pitch">12,000+ Pieces</p>
-                    <p className="text-[10px] text-ink/70 font-semibold mt-0.5">Shipped this cricket season</p>
+                    <p className="font-display text-xs sm:text-base font-extrabold leading-none text-pitch">12,000+ Pieces</p>
+                    <p className="text-[9px] sm:text-[10px] text-ink/70 font-semibold mt-0.5">Shipped this season</p>
                   </div>
                 </div>
               </div>
