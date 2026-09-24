@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Categories from './components/Categories'
@@ -11,7 +11,6 @@ import QuickViewModal from './components/QuickViewModal'
 
 function App() {
   const [cart, setCart] = useState([
-    // Start with a sample item so the user immediately sees how awesome the cart drawer is!
     {
       id: 1,
       name: 'English Willow Bat — Grade 1 Pro',
@@ -27,6 +26,18 @@ function App() {
   const [quickViewProduct, setQuickViewProduct] = useState(null)
   const [activeCategory, setActiveCategory] = useState('All')
   const [toast, setToast] = useState(null)
+
+  // Prevent body scroll when cart or modal is open
+  useEffect(() => {
+    if (isCartOpen || quickViewProduct) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isCartOpen, quickViewProduct])
 
   const showToast = (msg) => {
     setToast(msg)
@@ -71,15 +82,18 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-linen text-ink selection:bg-willow selection:text-pitch font-body flex flex-col">
-      {/* Toast Notification Banner */}
+    <div className="min-h-screen bg-linen text-ink selection:bg-willow selection:text-pitch font-body flex flex-col overflow-x-hidden">
+      
+      {/* Toast Notification */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-pitch text-linen border border-willow/40 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-fade-in">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="text-xs font-semibold">{toast}</span>
+        <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 bg-pitch text-linen border border-willow/40 px-4 sm:px-5 py-3 rounded-xl sm:rounded-2xl shadow-2xl flex items-center gap-2.5 sm:gap-3 animate-fade-in max-w-sm sm:max-w-md mx-auto sm:mx-0">
+          <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0" />
+          <span className="text-[11px] sm:text-xs font-semibold flex-1 min-w-0 truncate">
+            {toast}
+          </span>
           <button
             onClick={() => setIsCartOpen(true)}
-            className="text-xs text-willow font-bold underline hover:text-willow-light ml-1"
+            className="text-[11px] sm:text-xs text-willow font-bold underline hover:text-willow-light shrink-0"
           >
             View Bag →
           </button>
@@ -94,37 +108,35 @@ function App() {
         activeCategory={activeCategory}
       />
 
-      {/* Hero Section */}
-      <Hero
-        onShopClick={() => {
-          setActiveCategory('All')
-        }}
-      />
+      {/* Main Content */}
+      <main className="flex-1 w-full">
+        <Hero
+          onShopClick={() => {
+            setActiveCategory('All')
+          }}
+        />
 
-      {/* Curated Categories Section */}
-      <Categories
-        onSelectCategory={handleSelectCategory}
-        activeCategory={activeCategory}
-      />
+        <Categories
+          onSelectCategory={handleSelectCategory}
+          activeCategory={activeCategory}
+        />
 
-      {/* Filtered Product Catalog */}
-      <ProductGrid
-        onAdd={handleAddToCart}
-        onQuickView={(p) => setQuickViewProduct(p)}
-        activeCategory={activeCategory}
-        onSelectCategory={handleSelectCategory}
-      />
+        <ProductGrid
+          onAdd={handleAddToCart}
+          onQuickView={(p) => setQuickViewProduct(p)}
+          activeCategory={activeCategory}
+          onSelectCategory={handleSelectCategory}
+        />
 
-      {/* Craftsmanship & Trust Standard */}
-      <WhyUs />
+        <WhyUs />
 
-      {/* Real Player Reviews & Testimonials */}
-      <Testimonials />
+        <Testimonials />
+      </main>
 
-      {/* Comprehensive E-Commerce Footer */}
+      {/* Footer */}
       <Footer onSelectCategory={handleSelectCategory} />
 
-      {/* Interactive Slide-Over Cart Drawer */}
+      {/* Cart Drawer */}
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
@@ -134,7 +146,7 @@ function App() {
         onClear={handleClearCart}
       />
 
-      {/* Quick View Technical Specs Modal */}
+      {/* Quick View Modal */}
       <QuickViewModal
         product={quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
