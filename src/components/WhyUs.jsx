@@ -27,37 +27,40 @@ const pillars = [
 
 export default function WhyUs() {
   return (
-    <section id="craftsmanship" className="bg-linen-dim/60 border-t border-b border-ink/5 py-18 md:py-24">
+    <section
+      id="craftsmanship"
+      className="bg-linen-dim/60 border-t border-b border-ink/5 py-12 sm:py-16 md:py-24"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-ball block mb-2">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-ball block mb-1.5 sm:mb-2">
             The Master Craftsman Standard
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl text-ink font-bold leading-tight mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-ink font-bold leading-tight mb-3 sm:mb-4">
             Why Club Cricketers Trust Off Stump Supply
           </h2>
-          <p className="text-sm text-ink/70 leading-relaxed">
+          <p className="text-xs sm:text-sm text-ink/70 leading-relaxed">
             We don't sell stock straight out of shipping containers. Every bat, ball, and pad is prepped, tested, and certified before leaving our workshop.
           </p>
         </div>
 
         {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {pillars.map((pt) => (
             <div
               key={pt.title}
-              className="bg-white rounded-2xl p-7 border border-ink/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
+              className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 border border-ink/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 h-full"
             >
               <div>
-                <div className="w-14 h-14 rounded-xl bg-pitch/5 border border-pitch/10 flex items-center justify-center text-2xl mb-5 shadow-inner">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-pitch/5 border border-pitch/10 flex items-center justify-center text-xl sm:text-2xl mb-4 sm:mb-5 shadow-inner">
                   {pt.icon}
                 </div>
-                <span className="text-[11px] font-bold text-ball uppercase tracking-wider block mb-1">
+                <span className="text-[10px] sm:text-[11px] font-bold text-ball uppercase tracking-wider block mb-1">
                   {pt.subtitle}
                 </span>
-                <h3 className="font-display text-lg font-bold text-ink mb-3 leading-snug">
+                <h3 className="font-display text-base sm:text-lg font-bold text-ink mb-2 sm:mb-3 leading-snug">
                   {pt.title}
                 </h3>
                 <p className="text-xs text-ink/70 leading-relaxed">
@@ -65,7 +68,7 @@ export default function WhyUs() {
                 </p>
               </div>
 
-              <div className="pt-5 mt-5 border-t border-ink/5 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700">
+              <div className="pt-4 sm:pt-5 mt-4 sm:mt-5 border-t border-ink/5 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700">
                 <span>✓</span> Guaranteed Standard
               </div>
             </div>
@@ -73,12 +76,12 @@ export default function WhyUs() {
         </div>
 
         {/* Process Banner */}
-        <div className="mt-14 rounded-2xl bg-gradient-to-r from-pitch to-pitch-deep text-linen p-8 md:p-10 shadow-xl border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="max-w-xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-willow block mb-1">
+        <div className="mt-10 sm:mt-12 md:mt-14 rounded-xl sm:rounded-2xl bg-gradient-to-r from-pitch to-pitch-deep text-linen p-5 sm:p-8 md:p-10 shadow-xl border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
+          <div className="max-w-xl text-center lg:text-left">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-willow block mb-1">
               Complimentary Bat Preparation
             </span>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-linen mb-2">
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-linen mb-2 leading-tight">
               Free Knocking-in, Edging & Anti-Scuff Sheet
             </h3>
             <p className="text-xs sm:text-sm text-linen/75 leading-relaxed">
@@ -86,10 +89,10 @@ export default function WhyUs() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 shrink-0 w-full sm:w-auto">
             <a
               href="#products"
-              className="bg-ball hover:bg-ball-dark text-linen px-7 py-3.5 rounded-full text-xs font-semibold tracking-wide transition-colors shadow-lg text-center"
+              className="bg-ball hover:bg-ball-dark text-linen px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs font-semibold tracking-wide transition-colors shadow-lg text-center"
             >
               Browse English Willow
             </a>
@@ -97,7 +100,7 @@ export default function WhyUs() {
               href="https://wa.me/919876543210"
               target="_blank"
               rel="noreferrer"
-              className="border border-white/20 hover:border-willow text-linen/90 hover:text-willow px-7 py-3.5 rounded-full text-xs font-semibold tracking-wide transition-colors text-center"
+              className="border border-white/20 hover:border-willow text-linen/90 hover:text-willow px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs font-semibold tracking-wide transition-colors text-center"
             >
               Knocking Inquiries
             </a>
